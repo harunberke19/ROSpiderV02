@@ -1,12 +1,10 @@
 ```mermaid
-graph TD
+flowchart TD
     %% Node Initialization
-    subgraph Initialization
-        Start([Start Node]):::init --> NodeInit[Create 'autonomous_walker']:::init
-        NodeInit --> Setup[Initialize Phase, linear_x, angular_z]:::init
-        NodeInit --> PubObj[Create Publisher: /hexapod_joint_group_controller/commands]:::init
-        NodeInit --> SubObj[Create Subscriber: /cmd_vel]:::init
-    end
+    Start([Start Node]):::init --> NodeInit[Create 'autonomous_walker']:::init
+    NodeInit --> Setup[Initialize Phase, linear_x, angular_z]:::init
+    Setup --> PubObj[Create Publisher: /hexapod_joint_group_controller/commands]:::init
+    PubObj --> SubObj[Create Subscriber: /cmd_vel]:::init
 
     %% Data Flow / Callbacks
     SubObj -.-> Callback[cmd_vel_callback]:::callback

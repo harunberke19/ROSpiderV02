@@ -1,4 +1,4 @@
-# Golem Strategic Planner - Flowchart
+# Golem A* Planner - Flowchart
 
 ```mermaid
 flowchart TD
